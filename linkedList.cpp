@@ -66,7 +66,11 @@ void insertTail(node **head, int d)
 void deleteNode(node **head, int x)
 {
     if((*head)->data == x)
+	{
+		node *cur = *head;
         *head = (*head)->next;
+		delete(cur);
+	}
     else
     {
         node *cur, *prev;
@@ -78,6 +82,7 @@ void deleteNode(node **head, int x)
             cur = cur->next;
         }
         prev->next = cur->next;
+		delete(cur);
     }
 }
 
