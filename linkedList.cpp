@@ -5,6 +5,8 @@
   * deleteNode:			delete an element 'x' from the list
   * deleteNodePos:		delete a node at position 'x'
   * listLength:			returns the length of the list
+  * reverse:			reverses the list and return its head pointer
+  * isPalindrome:		checks if the list is palindrome
 ***/
 
 #include <iostream>
@@ -16,6 +18,24 @@ struct node
     struct node *next;
 };
 
+
+
+node *reverse(node *head)
+{
+    if(!head)
+        return NULL;
+    node *cur, *prev, *next;
+    cur = head;
+    prev = NULL;
+    while(cur)
+    {
+        next = cur->next;
+        cur->next = prev;
+        prev = cur;
+        cur = next;
+    }
+    return prev;
+}
 
 
 void insertHead(node **head, int d)
@@ -93,6 +113,25 @@ int listLength(node *head)
 }
 
 
+bool isPalindrome(node *head)
+{
+    int stack[50], top=-1;
+    node *cur = head;
+    while(cur)
+    {
+        stack[++top] = cur->data;
+        cur = cur->next;
+    }
+    while(head)
+    {
+        if(head->data != stack[top--])
+            return false;
+        head = head->next;
+    }
+    return true;
+}
+
+
 void display(struct node *head)
 {
     while(head)
@@ -115,5 +154,6 @@ int main()
     }
     display(head);
     cout<<"Length of the list: "<<listLength(head)<<endl;
+	display(reverse(head));
     return 0;
 }
