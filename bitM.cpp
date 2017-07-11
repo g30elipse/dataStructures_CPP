@@ -14,15 +14,24 @@ bool isPowerOfTwo(int x)
 }
 
 
+int countOnes(int n)
+{
+	int count=0;
+	while(n)
+	{
+		n = n & (n-1);
+		count++;
+	}
+	return count;
+}
+
+
 int main()
 {
 	int n;
 	cin>>n;
 	
-	if(isPowerOfTwo(n))
-		cout<<"YES"<<endl;
-	else
-		cout<<"NO"<<endl;
+	cout<<countOnes(n)<<endl;
 	
 	return 0;
 }
