@@ -7,9 +7,11 @@
   * listLength:			returns the length of the list
   * reverse:			reverses the list and return its head pointer
   * isPalindrome:		checks if the list is palindrome
+  * removeDuplicates:	removes duplicate elements from the list
 ***/
 
 #include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 struct node
@@ -18,6 +20,28 @@ struct node
     struct node *next;
 };
 
+
+node *removeDuplicates(node *root)
+{
+    unordered_set<int> seen;
+    node *cur = root;
+    node *prev = NULL;
+    while(cur)
+    {
+        if(seen.find(cur->data) != seen.end())
+        {
+            prev->next = cur->next;
+            delete(cur);
+        }
+        else
+        {
+            seen.insert(cur->data);
+            prev = cur;
+        }
+        cur = cur->next;
+    }
+    return root;
+}
 
 
 node *reverse(node *head)
