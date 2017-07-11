@@ -1,15 +1,16 @@
+
+/** Bit manipulation
+  * isPowerOfTwo:		checks if the number 'n' is a power of 2
+***/
+
 #include <iostream>
 using namespace std;
 
 
 
-bool isPowerOfTwo(int n)
+bool isPowerOfTwo(int x)
 {
-	if(n == 0)
-		return false;
-	while(x%2 == 0)
-		x /= 2;
-	return(x == 1);
+	return (x && !(x & (x-1)));
 }
 
 
