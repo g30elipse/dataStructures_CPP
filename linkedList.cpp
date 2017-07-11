@@ -7,7 +7,7 @@
   * listLength:			returns the length of the list
   * reverse:			reverses the list and return its head pointer
   * isPalindrome:		checks if the list is palindrome
-  * removeDuplicates:	removes duplicate elements from the list
+  * removeDuplicates:		removes duplicate elements from the list
 ***/
 
 #include <iostream>
