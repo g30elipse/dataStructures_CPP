@@ -7,3 +7,6 @@ Linked List with multiple functions.
 
 2. *bitM.cpp*
 Bit Manipulation Techniques
+
+3. *bst.cpp*
+Binary Search Tree
