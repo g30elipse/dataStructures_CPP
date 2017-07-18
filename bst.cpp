@@ -82,7 +82,7 @@ Node *searchElement(Node *root, int d)
         return searchElement(root->right, d);
 }
 
-
+// Returns the minimum element from the tree
 int findMin(Node *root)
 {
     if(root->left == NULL)

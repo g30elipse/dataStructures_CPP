@@ -10,3 +10,6 @@ Bit Manipulation Techniques
 
 3. *bst.cpp*
 Binary Search Tree
+
+4. *isBST.cpp*
+Checks if the given binary tree is a Binary Search Tree or not
